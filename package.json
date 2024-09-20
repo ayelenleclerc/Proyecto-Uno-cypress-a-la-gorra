@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "cypress open"
+    "test": "cypress open",
+    "test2":"cypress run"
   },
   "keywords": [],
   "author": "",
@@ -11,6 +12,7 @@
   "description": "",
   "dependencies": {
     "cypress": "^13.13.2",
+    "cypress-mochawesome-reporter": "^3.8.2",
     "cypress-real-events": "^1.13.0"
   }
 }

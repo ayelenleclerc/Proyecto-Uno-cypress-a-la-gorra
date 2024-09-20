@@ -39,6 +39,7 @@ describe('Saucedemo', () => {
         cy.get("[data-test=password]").type(credencial.password)
         cy.get("[data-test=login-button]").click()
         cy.get('#react-burger-menu-btn').click()
+        //cy.screenshot('img-login')
         cy.get('[data-test=logout-sidebar-link]').click()
              cy.get('#root > div > div.login_logo').should('have.text', 'Swag Labs')
          })
