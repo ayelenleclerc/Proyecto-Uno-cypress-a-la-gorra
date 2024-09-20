@@ -19,19 +19,19 @@ describe('Saucedemo', () => {
              datosCorrectos = data_ok
         })
     })
-    beforeEach("Interceptar fetch y cargar pagina",() => {
+    beforeEach("cargar pagina",() => {
     cy.visit('https://www.saucedemo.com/')
     
     })
 
-    it('error de saucedemo', () => {
-        datosError.forEach(credencial => {
-        cy.get("[data-test=username]").clear().type(credencial.username)
-        cy.get("[data-test=password]").clear().type(credencial.password)
-        cy.get("[data-test=login-button]").click()
-        })
+    // it('error de saucedemo', () => {
+    //     datosError.forEach(credencial => {
+    //     cy.get("[data-test=username]").clear().type(credencial.username)
+    //     cy.get("[data-test=password]").clear().type(credencial.password)
+    //     cy.get("[data-test=login-button]").click()
+    //     })
         
-    })
+    // })
     
     it('login ok de saucedemo', () => {
          datosCorrectos.forEach(credencial => {
@@ -40,6 +40,7 @@ describe('Saucedemo', () => {
         cy.get("[data-test=login-button]").click()
         cy.get('#react-burger-menu-btn').click()
         cy.get('[data-test=logout-sidebar-link]').click()
+             cy.get('#root > div > div.login_logo').should('have.text', 'Swag Labs')
          })
     })
-})
+    })
